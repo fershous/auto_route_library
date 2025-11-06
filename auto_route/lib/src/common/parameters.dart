@@ -133,14 +133,7 @@ class Parameters {
   /// returns the value corresponding with [key] as nullable [bool]
   /// if null returns [defaultValue]
   bool? optBool(String key, [bool? defaultValue]) {
-    switch (_params[key]?.toLowerCase()) {
-      case 'true':
-        return true;
-      case 'false':
-        return false;
-      default:
-        return defaultValue;
-    }
+    return _params[key] ?? defaultValue;
   }
 
   /// returns the value corresponding with [key] as [bool]
